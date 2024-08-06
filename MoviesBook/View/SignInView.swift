@@ -24,12 +24,12 @@ struct SignInView: View {
                 
             VStack {
                 HStack {
-                    Spacer()
+                        
                     Button("Skip") {
                         isTabViewActive = true
                     }
                     .foregroundColor(.gray.opacity(0.5))
-                    .padding()
+                    
                 }
                 Spacer()
                 VStack(spacing: 20) {
@@ -53,7 +53,7 @@ struct SignInView: View {
                     }
                     
                     Button(action: {
-                        // Sign In action
+                        isTabViewActive = true
                     }) {
                         Text("Sign In")
                             .fontWeight(.bold)
