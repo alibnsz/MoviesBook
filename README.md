@@ -1,100 +1,82 @@
-# OMDb API Application
+# 🎬 MoviesBook
 
-This is a SwiftUI-based application that fetches and displays movie information using the [OMDb API](https://www.omdbapi.com). The project is structured with the MVVM architecture and uses native networking with `URLSession`.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b9db1889-043d-4fb5-93b5-2263b387278d" alt="MoviesBook Logo" width="256" height="256">
+  <h3>Redefine your movie discovery and favoriting experience</h3>
+</div>
 
-## Screenshots
-<img width=1600 src="https://github.com/user-attachments/assets/5ee6e3eb-8c2f-4727-9cc4-a4ae31b9c487"/>
+---
 
-## Features
+## 📱 App Screenshots
 
-- **Search Movies and TV Shows**: Search for movies or TV shows by name.
-- **Detailed Information**: View detailed information about a specific movie or show, including the synopsis, release date, cast, and ratings.
-- **Discover Popular Content**: Browse trending and popular movies or TV shows.
-- **Personalized Lists**: Create and manage watchlists or favorites.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5ee6e3eb-8c2f-4727-9cc4-a4ae31b9c487" alt="App Screenshots" width="800">
+</div>
 
-## Getting Started
+---
 
-### Prerequisites
+## 📖 About the Project
 
-- [OMDb API Key]([https://www.omdbapi.com/apikey.aspx]): Sign up and generate an API key.
-- A Mac with Xcode installed to run and test the application.
+**MoviesBook** is a modern iOS application that allows users to explore a vast movie archive, access detailed information, and organize their favorite movies. It provides access to current movie data through OMDB API integration and offers a secure user experience with Firebase infrastructure.
 
-### Installation
+## ✨ Features
 
-1. Clone this repository:
+- 🔍 **Advanced Movie Search**: Search through comprehensive movie database with OMDB API
+- 📋 **Detailed Movie Information**: Poster, plot, cast, director, and rating information
+- ❤️ **Favorites Management**: Add your favorite movies to your collection
+- 👤 **User Profile**: Personalized experience
+- 🔐 **Secure Authentication**: Secure session management with Firebase Authentication
+- 🌙 **Dark Mode**: Modern and elegant dark theme
+- 📱 **Responsive Design**: Optimal experience on all iPhone models
 
-   ```bash
-   git clone https://github.com/your-username/omdb-api-app.git
-   cd omdb-api-app
+## 🏗 Architecture
 
-   ```
+This project is developed using **MVVM (Model-View-ViewModel)** architecture. The project consists of four main layers:
 
-2. Open the project in Xcode.
+- **Model**: Movie data and API response models
+- **View**: User interfaces built with SwiftUI
+- **ViewModel**: Business logic and data management
+- **Service**: API calls and network operations
 
-3. Create a `DownloaderClient.swift` file in the project and add your TMDb API key:
+## 🛠 Technologies
 
-   ```swift
-   let apiKey = "your_api_key_here"
-   ```
+- **Framework**: SwiftUI
+- **Architecture**: MVVM Pattern
+- **Networking**: URLSession
+- **Backend**: Firebase (Auth, Firestore, Storage)
+- **API**: OMDB API
+- **Dependency Management**: CocoaPods
+- **Minimum iOS**: 14.0+
 
-4. Build and run the application:
+## 📦 Dependencies
 
-   - Select your simulator or connected device in Xcode.
-   - Press `Cmd + R` to build and run the app.
+- **FirebaseAuth**: User authentication
+- **FirebaseFirestore**: NoSQL database
+- **FirebaseStorage**: File storage
 
-## Architecture
+## 🚀 Installation
 
-This project follows the **MVVM (Model-View-ViewModel)** architecture pattern:
+1. **Clone the project** and navigate to the directory
+2. **Install CocoaPods dependencies** - Run `pod install` command in Terminal
+3. **Open workspace file** - Open `MoviesBook.xcworkspace` file with Xcode
+4. **Firebase configuration**
+   - Create a new project in Firebase Console
+   - Add iOS application
+   - Add GoogleService-Info.plist file to the project
+5. **OMDB API Key**
+   - Get a free API key from [OMDB API](https://www.omdbapi.com/)
+   - Update your API key in DownloaderClient.swift file
 
-- **Model**: Represents the data and business logic.
-- **View**: SwiftUI views that display the data.
-- **ViewModel**: Handles the business logic and provides data to the views.
+## 🎯 Usage
 
-### Dependency Injection
+1. **Onboarding**: Welcome screen is displayed when the app opens
+2. **Sign In/Sign Up**: Secure authentication with Firebase Auth
+3. **Search**: You can search by movie name on the main screen
+4. **Details**: Tap on movie posters to access detailed information
+5. **Favorites**: Add your favorite movies to favorites list
 
-- The services and view models are distributed using a **Factory** pattern, ensuring a single responsibility and reusability across the app.
+## 🔧 Customization
 
-## Caching
+- **API Endpoint Change**: You can update the URL in DownloaderClient.swift file
+- **Theme Customization**: You can change the preferredColorScheme setting in MoviesBookApp.swift file
 
-The app includes a lightweight caching mechanism to store and retrieve frequently used data, improving performance and reducing network calls.
-
-## Technologies Used
-
-- **Language**: Swift
-- **UI Framework**: SwiftUI
-- **Architecture**: MVVM
-- **Network**: URLSession
-- **Caching**: Custom in-memory caching solution (no third-party libraries used).
-
-## Usage
-
-1. **Search for Movies/TV Shows**:
-
-   - Enter the name of a movie or TV show in the search bar.
-   - View a list of matching results with brief details.
-
-2. **View Detailed Information**:
-
-   - Tap on any movie or show to view its detailed information, including:
-     - Title
-     - Overview
-     - Ratings
-
-3. **Discover Popular Content**:
-
-   - Visit the "Trending" section to explore currently popular movies and TV shows.
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-name`).
-3. Commit your changes (`git commit -m 'Add a new feature'`).
-4. Push to the branch (`git push origin feature-name`).
-5. Open a pull request.
-
-## Acknowledgments
-
-- [TMDb](https://www.omdbapi.com) for the API.
-- The SwiftUI community for inspiration and best practices.
